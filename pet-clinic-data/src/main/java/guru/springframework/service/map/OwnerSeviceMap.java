@@ -1,11 +1,11 @@
 package guru.springframework.service.map;
 
 import guru.springframework.model.Owner;
-import guru.springframework.service.CrudService;
+import guru.springframework.service.OwnerService;
 
 import java.util.Set;
 
-public class OwnerSeviceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerSeviceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -30,5 +30,10 @@ public class OwnerSeviceMap extends AbstractMapService<Owner, Long> implements C
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
